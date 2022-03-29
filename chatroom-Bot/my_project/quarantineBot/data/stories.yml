@@ -1,35 +1,52 @@
 version: "2.0"
 
 stories:
-  - story: initialization
+  # - story: initialization
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+
+  - story: exercise_recommendation
     steps:
-      - intent:
-      - action: utter_greet
-      - intent: mood_great
-      - action: utter_happy
-# - story: happy path
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_great
-#   - action: utter_happy
+      - intent: greet_exercise
+      - action: utter_set_time
+      - intent: set_time
+      - action: utter_time_needed
+      - intent: time_input
+      - action: utter_recommendation_total
+      - intent: next_exercise
+      - action: utter_recommendation_1
+      - intent: next_exercise
+      - action: utter_recommendation_2
+      - intent: next_exercise
+      - action: utter_recommendation_3
+      - intent: next_exercise
+      - action: utter_all_done_encouragement
+      - action: utter_poster
 
-# - story: sad path 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
+  # - story: happy path
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_great
+  #     - action: utter_happy
 
-# - story: sad path 2
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_goodbye
+  # - story: sad path 1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: affirm
+  #     - action: utter_happy
+
+  # - story: sad path 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: deny
+  #     - action: utter_goodbye
