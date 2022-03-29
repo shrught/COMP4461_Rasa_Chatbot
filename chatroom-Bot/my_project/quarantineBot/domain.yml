@@ -2,33 +2,69 @@ version: "2.0"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - initialization
+  - take_age_gender_input
+  - take_weight_input
+  - take_goal_input
+  - take_time_need_input
+  - notification
+  - recommendation_total
+  - recommendation_1
+  - recommendation_2
+  - recommendation_3
+  - recommendation_4
+  - encourage
+  - achievement
+  - chitchat_1
+  - chitchat_2
+  - chitchat_3
+  - chitchat_4
   - bot_challenge
+  # - greet
+  # - goodbye
+  # - affirm
+  # - deny
+  # - mood_great
+  # - mood_unhappy
+  # - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  utter_initialization:
+  utter_take_age_gender_input:
+  utter_take_weight_input:
+  utter_take_goal_input:
+  utter_take_time_need_input:
+  utter_notification:
+  utter_recommendation_total:
+  utter_recommendation_1:
+  utter_recommendation_2:
+  utter_recommendation_3:
+  utter_recommendation_4:
+  utter_encourage:
+  utter_achievement:
+  utter_chitchat_1:
+  utter_chitchat_2:
+  utter_chitchat_3:
+  utter_chitchat_4:
+  # utter_greet:
+  #   - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-  - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
+  # utter_cheer_up:
+  #   - text: "Here is something to cheer you up:"
+  #   - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
 
+  # utter_did_that_help:
+  #   - text: "Did that help you?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  # utter_happy:
+  #   - text: "Great, carry on!"
 
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
+  # utter_goodbye:
+  #   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "Sorry I may not get what you mean... Try something else?"
 
 session_config:
   session_expiration_time: 60
