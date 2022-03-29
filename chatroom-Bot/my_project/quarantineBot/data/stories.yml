@@ -23,6 +23,20 @@ stories:
       - intent: next_exercise
       - action: utter_all_done_encouragement
       - action: utter_poster
+      - action: utter_goodbye_exercise
+
+  - story: last_day_of_challenge
+    steps:
+      - intent: last_day
+      - action: utter_congrat
+
+  - story: chichat_1
+    steps:
+      - intent: greet_chichat
+      - action: utter_greet
+      - action: utter_chitchat_1
+      - intent: chichat_1_response
+      - action: utter_chichat_2
 
   # - story: happy path
   #   steps:
