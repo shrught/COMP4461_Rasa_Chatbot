@@ -1,0 +1,3 @@
+*.pyc
+chatroom-Bot/my_project/quarantineBot/models
+chatroom-Bot/my_project/db.sqlite3
