@@ -13,17 +13,16 @@ intents:
   - recommendation_1
   - recommendation_2
   - recommendation_3
-  - encourage
   - cheer_up_display_achievement
+  - congrat
   - chitchat_1
   - chitchat_2
   - chitchat_3
   - chitchat_4
   - bot_challenge
-  # - greet
-  # - goodbye
-  # - affirm
-  # - deny
+  - goodbye_exercise
+  - affirm
+  - deny
   # - mood_great
   # - mood_unhappy
   # - bot_challenge
@@ -69,6 +68,14 @@ responses:
     - text: "Make a poster and share it with your friends:) \nCheck here for your poster!"
       # image: "..."
 
+  utter_congrat:
+    - text: >
+        "Congrats on your last day of quarantine! You have been sticking to your goal in the past 14 days, and this impresses me a lot!"
+        "Hope my existence give you motivation and joy during your quarantine! Please stay healthy and safe~"
+  
+  # utter_chitchat_1:
+  # utter_chitchat_2:
+
   utter_greet:
     - text: "Hey! How are you?"
 
@@ -83,8 +90,8 @@ responses:
   utter_happy:
     - text: "Great, carry on!"
 
-  utter_goodbye:
-    - text: "Bye"
+  utter_goodbye_exercise:
+    - text: "You have finished your exercises today! Please take a good rest and see you!"
 
   utter_iamabot:
     - text: "Sorry I may not get what you mean... Try something else?"
