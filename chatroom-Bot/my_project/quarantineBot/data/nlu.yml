@@ -57,6 +57,14 @@ nlu:
       - exercise finished
       - finished
 
+  - intent: last_day
+    examples: |
+      - The last day of quarantine!
+      - Quarantine ends tomorrow!
+      - I will be free tomorrow!
+      - This is my last night at quarantine.
+      - last day of quarantine
+
   - intent: share_poster
     examples: |
       - yeah, show me the poster
