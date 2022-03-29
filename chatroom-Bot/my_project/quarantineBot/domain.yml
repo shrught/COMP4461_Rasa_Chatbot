@@ -21,6 +21,7 @@ intents:
   - chitchat_4
   - bot_challenge
   - goodbye_exercise
+  - goodbye
   - affirm
   - deny
   # - mood_great
@@ -89,6 +90,9 @@ responses:
 
   utter_happy:
     - text: "Great, carry on!"
+    
+  utter_goodbye:
+    - text: "Bye!"
 
   utter_goodbye_exercise:
     - text: "You have finished your exercises today! Please take a good rest and see you!"
