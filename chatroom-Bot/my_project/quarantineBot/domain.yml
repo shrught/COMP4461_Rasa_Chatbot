@@ -1,5 +1,8 @@
 version: "2.0"
 
+config:
+  store_entities_as_slots: true
+
 intents:
   - greet
   - goodbye
@@ -8,6 +11,45 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - give_name 
+  - give_age 
+  - give_gender 
+  - give_weight 
+  - give_height 
+  - give_how_often_exercise 
+  - give_goal 
+
+entities: 
+  - name 
+  - age 
+  - gender 
+  - weight 
+  - height 
+  - how_often_exercise 
+  - goal 
+
+slots:
+  name:
+    type: any
+    influence_conversation: false
+  age:
+    type: any
+    influence_conversation: false
+  gender:
+    type: any
+    influence_conversation: false
+  weight:
+    type: any
+    influence_conversation: false
+  height:
+    type: any
+    influence_conversation: false
+  how_often_exercise:
+    type: any
+    influence_conversation: false
+  goal:
+    type: any
+    influence_conversation: false
 
 responses:
   utter_greet:
@@ -16,7 +58,6 @@ responses:
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
   - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
-
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -29,6 +70,65 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+  - text: "To begin with, may I know your name?"
+
+  utter_ask_age:
+  - text: "What is your age?"
+
+  utter_ask_gender:
+  - text: "What is your gender?"
+
+  utter_ask_weight:
+  - text: "What is your weight?"
+
+  utter_ask_height:
+  - text: "How about your height?"
+
+  utter_ask_how_often_exercise:
+  - text: "How often do you exercise?"
+
+  utter_ask_goal:
+  - text: "Then, what goal of exercise would you like to set for your coming 14 days? Do you specifically want to Bulk or Cut?"
+
+  utter_submit:
+  - text: |-
+      All done! Here is your personal user_info:
+          - Name: {name}
+          - Age: {age}
+          - Gender: {gender}
+          - Height: {height}
+          - Weight: {weight}
+          - Gender: {gender}
+          - Exercise Experience: {how_often_exercise}
+          - 14-days Goal: {goal}
+      I have customized a daily exercise plan for you! I will notify you for exercise everyday!
+
+forms:
+  user_info:
+    name:
+    - type: from_text
+      # entity: name 
+    age:
+    - type: from_text 
+      # entity: age 
+    gender:
+    - type: from_text 
+      # entity: gender 
+    weight:
+    - type: from_text 
+      # entity: weight 
+    height:
+    - type: from_text 
+      # entity: height 
+    how_often_exercise:
+    - type: from_text 
+      # entity: how_often_exercise
+    goal:
+    - type: from_text
+      # entity: goal 
+
 
 session_config:
   session_expiration_time: 60

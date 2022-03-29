@@ -90,3 +90,40 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+# - intent: give_name
+#   examples: |
+#     - My name is [Jim](name)
+#     - [Yukai](name)
+  
+# - intent: give_age 
+#   examples: |
+#     - [12](age)
+#     - i'm [21](age)
+
+# - intent: give_gender 
+#   examples: | 
+#     - [Male](gender)
+#     - I'm [female](gender)
+
+# - intent: give_weight 
+#   examples: |
+#     - [100](weight) kg
+#     - [120](weight)
+
+# - intent: give_height 
+# - examples: |
+#     - [173](height)
+#     - [162](height) cm 
+#     - i'm [192](height) cm 
+
+# - intent: give_how_often_exercise
+# - examples: |
+#     - [Not very often](how_often_exercise)
+#     - [Once a week])(how_often_exercise)
+#     - [Very often](how_often_exercise)
+
+# - intent: give_goal 
+# - examples: |
+#     - [Bulk](goal)
+#     - [Cut](goal)
