@@ -6,15 +6,15 @@ intents:
   - take_age_gender_input
   - take_weight_input
   - take_goal_input
+  - set_time
   - take_time_need_input
   - notification
   - recommendation_total
   - recommendation_1
   - recommendation_2
   - recommendation_3
-  - recommendation_4
   - encourage
-  - achievement
+  - cheer_up_display_achievement
   - chitchat_1
   - chitchat_2
   - chitchat_3
@@ -29,39 +29,62 @@ intents:
   # - bot_challenge
 
 responses:
-  utter_greet:
-  utter_initialization:
-  utter_take_age_gender_input:
-  utter_take_weight_input:
-  utter_take_goal_input:
-  utter_take_time_need_input:
-  utter_notification:
-  utter_recommendation_total:
-  utter_recommendation_1:
-  utter_recommendation_2:
-  utter_recommendation_3:
-  utter_recommendation_4:
-  utter_encourage:
-  utter_achievement:
-  utter_chitchat_1:
-  utter_chitchat_2:
-  utter_chitchat_3:
-  utter_chitchat_4:
   # utter_greet:
-  #   - text: "Hey! How are you?"
+  # utter_initialization:
+  # utter_take_age_gender_input:
+  # utter_take_weight_input:
+  # utter_take_goal_input:
 
-  # utter_cheer_up:
-  #   - text: "Here is something to cheer you up:"
-  #   - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
+  utter_set_time:
+    - text: "Great! Would you like to work right now or you want to set a timer?"
 
-  # utter_did_that_help:
-  #   - text: "Did that help you?"
+  utter_time_needed:
+    - text: "Got it. How long would you like to exercise? I suggest at least 30min per day~ :)"
 
-  # utter_happy:
-  #   - text: "Great, carry on!"
+  utter_recommendation_total:
+    - text: >
+        "All set. I have customize your exercise plan for the 14-th day of quarantine. "
+        "According to your goal set on the first day, we will do the following exercise today:\n We will do a 5-min warm-up, then a 10-min exercise on leg and a 10-min exercise on back,with 5-min stretching exercise at last."
+        "The first one is a warm-up exercise, you can check it here [click](https://b23.tv/TQcXRKs;) Enjoy!"
 
-  # utter_goodbye:
-  #   - text: "Bye"
+  utter_recommendation_1:
+    - text: >
+        "You've done a very good job! Let's take a look at the next exercise."
+        "The second one is an exercise on leg. It takes about 10 minutes. Check it out! [click](https://b23.tv/7CQGkyK)"
+
+  utter_recommendation_2:
+    - text: >
+        "You are working towards your goal! Shall we continue?"
+        "The third exercise is for your back, which takes about 10 minutes. Enjoy![click](https://b23.tv/6iahneh)"
+
+  utter_recommendation_3:
+    - text: >
+        "Good job! You have finished your major exercise today, now let's do some strecthing exercise. It helps prevent muscle soreness :)"
+        "You can check it here: [click](https://b23.tv/gmZfaJi)"
+
+  utter_all_done_encouragement:
+    - text: "Congratulations! You have finished all your exercise tasks today! \nYou did a very good job during your quarantine. So far, you have gathered 🌟🌟🌟🌟🌟 🌟🌟🌟🌟🌟 (10 stars in one streak)! Four more days to go!"
+
+  utter_poster:
+    - text: "Make a poster and share it with your friends:) \nCheck here for your poster!"
+      # image: "..."
+
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: >
+        "Here is something to cheer you up:"
+        "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
 
   utter_iamabot:
     - text: "Sorry I may not get what you mean... Try something else?"
