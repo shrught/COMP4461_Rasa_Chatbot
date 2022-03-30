@@ -1,35 +1,101 @@
 version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-  - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
-
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+  - next_exercise
+  - greet
+  - set_time
+  - time_input
+  - greet_exercise
+  - initialization
+  - last_day
+  - share_poster
+  - break
+  - bot_challenge
+  - goodbye
+  - affirm
+  - deny
+responses:
+  utter_set_time:
+    - text: Great! Would you like to work right now or you want to set a time later today?
+      buttons:
+        - title: Now
+          payload: right now
+        - title: Later. Go set a time
+          payload: later
+  utter_time_needed:
+    - text: Got it. How long would you like to exercise? I suggest at least 30min per day~ :)
+  utter_recommendation_total:
+    - text: |
+        "All set. I have customize your exercise plan for the 14-th day of quarantine. " "According to your goal set on the first day, we will do the following exercise today:\n We will do a 5-min warm-up, then a 10-min exercise on leg and a 10-min exercise on back,with 5-min stretching exercise at last." "The first one is a warm-up exercise, you can check it here [click](https://b23.tv/TQcXRKs;) Enjoy!"
+      image: https://i.ytimg.com/vi/6rjlAfBoEUM/maxresdefault.jpg
+      buttons:
+        - title: I've finished! Move on to the next exercise, 3 more go to!
+          payload: Finished.
+        - title: I'll get some water.
+          payload: Break
+  utter_recommendation_1:
+    - text: |
+        "You've done a very good job! Let's take a look at the next exercise." "The second one is an exercise on leg. It takes about 10 minutes. Check it out! [click](https://b23.tv/7CQGkyK)"
+      image: https://i.ytimg.com/vi/XT1Aba2ko2I/sddefault.jpg
+      buttons:
+        - title: I've finished! Continue to the next exercise, 2 more to go!
+          payload: Finished.
+        - title: I'll get some water.
+          payload: Break
+  utter_recommendation_2:
+    - text: |
+        "You are working towards your goal! Shall we continue?" "The third exercise is for your back, which takes about 10 minutes. Enjoy![click](https://b23.tv/6iahneh)"
+      image: https://i.ytimg.com/vi/eDp7EYqe2HU/maxresdefault.jpg
+      buttons:
+        - title: I've finished! Continue to the last exercise.
+          payload: Finished
+        - title: I'll get some water.
+          payload: Break
+  utter_recommendation_3:
+    - text: |
+        "Good job! You have finished your major exercise today, now let's do some strecthing exercise. It helps prevent muscle soreness :)" "You can check it here: [click](https://b23.tv/gmZfaJi)"
+      image: https://i.ytimg.com/vi/k3mVP4fSlPA/maxresdefault.jpg
+      buttons:
+        - title: I've finished!
+          payload: Finished
+  utter_all_done_encouragement:
+    - text: |-
+        Congratulations! You have finished all your exercise tasks today! 
+        You did a very good job during your quarantine. So far, you have gathered 🌟🌟🌟🌟🌟 🌟🌟🌟🌟🌟 (10 stars in one streak)! Four more days to go!
+  utter_poster:
+    - text: |-
+        Make a poster and share it with your friends:) 
+        Check here for your poster!
+  utter_congrat:
+    - text: |
+        "Congrats on your last day of quarantine! You have been sticking to your goal in the past 14 days, and this impresses me a lot!" "Hope my existence give you motivation and joy during your quarantine! Please stay healthy and safe~"
+  utter_greet:
+    - text: Hey! How are you?
+  utter_break:
+    - text: Sure. Please notify me when you come back!
+      buttons:
+        - title: I'm back; Let's continue!
+          payload: Finished
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_happy:
+    - text: Great, carry on!
+  utter_goodbye_exercise:
+    - text: You have finished your exercises today! Please take a good rest and see you!
+  utter_goodbye:
+    - text: Goodbye!
+  utter_iamabot:
+    - text: Sorry I may not get what you mean... Try something else?
+actions:
+  - utter_all_done_encouragement
+  - utter_goodbye_exercise
+  - utter_greet
+  - utter_poster
+  - utter_recommendation_1
+  - utter_recommendation_2
+  - utter_recommendation_3
+  - utter_recommendation_total
+  - utter_set_time
+  - utter_time_needed
