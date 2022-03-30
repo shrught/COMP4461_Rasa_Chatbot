@@ -100,7 +100,6 @@ responses:
           - Gender: {gender}
           - Height: {height}
           - Weight: {weight}
-          - Gender: {gender}
           - Exercise Experience: {how_often_exercise}
           - 14-days Goal: {goal}
       I have customized a daily exercise plan for you! I will notify you for exercise everyday!
