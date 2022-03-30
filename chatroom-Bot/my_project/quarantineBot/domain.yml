@@ -139,41 +139,41 @@ responses:
   - text: "What is your gender?"
     buttons:
     - title: "Male"
-      payload: '/inform{{"gender":"male"}}'
+      payload: Male
     - title: "Female"
-      payload: '/inform{{"gender":"female"}}'
+      payload: Female
 
   utter_ask_weight:
-  - text: "What is your weight in kg?"
+  - text: "What is your weight?"
 
   utter_ask_height:
-  - text: "How about your height in cm?"
+  - text: "How about your height?"
 
   utter_ask_how_often_exercise:
   - text: "How often do you exercise?"
     buttons:
       - title: "Less than one hour per week"
-        payload: '/inform{{"how_often_exercise":"< 1 hour per week"}}'
+        payload: Less 1 hour per week
       - title: "One to two hours per week"
-        payload: '/inform{{"how_often_exercise":"1-2 hours per week"}}'
+        payload: One to two hours per week
       - title: "Two to three hours per week"
-        payload: '/inform{{"how_often_exercise":"2-3 hours per week"}}'
+        payload: Two to three hours per week
       - title: "Three to four hours per week"
-        payload: '/inform{{"how_often_exercise":"3-4 hours per week"}}'
+        payload:  Three to four hours per week
       - title: "More than four hours per week"
-        payload: '/inform{{"how_often_exercise":"> 4 hours per week"}}'
+        payload: More than four hours per week
 
   utter_ask_goal:
   - text: "Then, what goal of exercise would you like to set for your coming 14 days?"
     buttons:
     - title: "Shedding fat"
-      payload: '/inform{{"goal":"Shedding fat"}}'
+      payload: Shedding fat
     - title: "Building muscles"
-      payload: '/inform{{"goal":"Building muscles"}}'
-    - title: "Improving endurance"
-      payload: '/inform{{"goal":"Improving endurance"}}'
+      payload: Building muscles
+    - title: Improving endurance
+      payload: Improving endurance
     - title: "Increasing flexibility"
-      payload: '/inform{{"goal":"Increasing flexibility"}}'
+      payload: Increasing flexibility
 
   utter_submit:
   - text: |-
@@ -196,7 +196,7 @@ forms:
     - type: from_text 
       # entity: age 
     gender:
-    - type: from_entity
+    - type: from_text
       entity: gender 
     weight:
     - type: from_text 
@@ -205,10 +205,10 @@ forms:
     - type: from_text 
       # entity: height 
     how_often_exercise:
-    - type: from_entity 
+    - type: from_text 
       entity: how_often_exercise
     goal:
-    - type: from_entity
+    - type: from_text
       entity: goal 
 
 
