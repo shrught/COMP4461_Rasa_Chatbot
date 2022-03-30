@@ -2,32 +2,6 @@ version: "2.0"
 
 stories:
 
-# - story: happy path
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_great
-#   - action: utter_happy
-
-# - story: sad path 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
-
-# - story: sad path 2
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_goodbye
 
 - story: Ask basic information from the user 
   steps: 
@@ -35,3 +9,29 @@ stories:
   - action: user_info 
   - active_loop: null 
   - action: utter_submit
+
+- story: exercise_recommendation
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: greet_exercise
+    - action: utter_set_time
+    - intent: set_time
+    - action: utter_time_needed
+    - intent: time_input
+    - action: utter_recommendation_total
+    - intent: next_exercise
+    - action: utter_recommendation_1
+    - intent: next_exercise
+    - action: utter_recommendation_2
+    - intent: next_exercise
+    - action: utter_recommendation_3
+    - intent: next_exercise
+    - action: utter_all_done_encouragement
+    - action: utter_poster
+    - action: utter_goodbye_exercise
+
+- story: last_day_of_challenge
+  steps:
+    - intent: last_day
+    - action: utter_congrat
