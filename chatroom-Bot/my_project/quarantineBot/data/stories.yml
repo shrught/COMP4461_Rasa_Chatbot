@@ -1,30 +1,55 @@
 version: "2.0"
 
 stories:
+  - story: Ask basic information from the user
+    steps:
+      - intent: affirm
+      - action: user_info
+      - active_loop: null
+      - action: utter_submit
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - story: exercise_recommendation
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: greet_exercise
+      - action: utter_set_time
+      - intent: set_time
+      - action: utter_time_needed
+      - intent: time_input
+      - action: utter_recommendation_total_text_1
+      - action: utter_recommendation_total_text_2
+      - action: utter_recommendation_total_text_3
+      - intent: next_exercise
+      - action: utter_recommendation_1_text_1
+      - action: utter_recommendation_1_text_2
+      - intent: next_exercise
+      - action: utter_recommendation_2_text_1
+      - action: utter_recommendation_2_text_2
+      - intent: next_exercise
+      - action: utter_recommendation_3_text_1
+      - action: utter_recommendation_3_text_2
+      - intent: next_exercise
+      - action: utter_all_done_encouragement
+      - action: utter_poster
+      - action: utter_goodbye_exercise
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - story: break_back
+    steps:
+      - intent: break
+      - action: utter_break
+      - intent: break_back
+      - action: utter_recommendation_2_text_2
+      - intent: next_exercise
+      - action: utter_recommendation_3_text_1
+      - action: utter_recommendation_3_text_2
+      - intent: next_exercise
+      - action: utter_all_done_encouragement
+      - action: utter_poster
+      - action: utter_goodbye_exercise
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - story: last_day_of_challenge
+    steps:
+      - intent: last_day
+      - action: utter_congrat_1
+      - action: utter_congrat_2

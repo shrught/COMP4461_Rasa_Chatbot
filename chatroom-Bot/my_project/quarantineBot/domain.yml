@@ -1,35 +1,249 @@
 version: "2.0"
 
+config:
+  store_entities_as_slots: true
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
+  - next_exercise
   - greet
+  - set_time
+  - time_input
+  - greet_exercise
+  - initialization
+  - last_day
+  - share_poster
+  - break
   - goodbye
   - affirm
   - deny
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - inform
+
+entities:
+  - name
+  - age
+  - gender
+  - weight
+  - height
+  - how_often_exercise
+  - goal
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+  age:
+    type: any
+    influence_conversation: false
+  gender:
+    type: text
+    influence_conversation: false
+  weight:
+    type: any
+    influence_conversation: false
+  height:
+    type: any
+    influence_conversation: false
+  how_often_exercise:
+    type: any
+    influence_conversation: false
+  goal:
+    type: text
+    influence_conversation: false
 
 responses:
+  utter_set_time:
+    - text: Great! Would you like to work right now 💪 or you want to set a time ⏰ later today?
+      buttons:
+        - title: Right now 💪
+          payload: right now
+        - title: Later. Go set a time ⏰
+          payload: later
+  utter_time_needed:
+    - text: "Got it ✅. How long would you like to exercise? (I would suggest at least 30min per day😊)"
+
+  utter_recommendation_total_text_1:
+    - text: "All set ✅. I have customized your exercise plan for the 4-th day of quarantine 🏃‍♀️."
+
+  utter_recommendation_total_text_2:
+    - text:
+        "According to your goal set on the first day, we will do the following exercise today:
+        - We will do a 5-min warm-up , then a 10-min exercise on leg and a 10-min exercise on back,with 5-min stretching exercise at last🌟"
+      image: https://i.ytimg.com/vi/6rjlAfBoEUM/maxresdefault.jpg
+
+  utter_recommendation_total_text_3:
+    - text: "The first one is a warm-up exercise, you can check it [here](https://b23.tv/TQcXRKs;) 🌟 Enjoy!"
+      buttons:
+        - title: I've finished! ✅ Move on to the next exercise, 3 more go to! 💪
+          payload: I've finished the exercise.
+        - title: I'll get some water 🥤
+          payload: I'll get some water
+
+  utter_recommendation_1_text_1:
+    - text: "You've done a very good job! Let's take a look at the next exercise."
+      image: https://i.ytimg.com/vi/XT1Aba2ko2I/sddefault.jpg
+
+  utter_recommendation_1_text_2:
+    - text: "The second one is an exercise on leg. It takes about 10 minutes. Check it out [here](https://b23.tv/7CQGkyK)"
+      buttons:
+        - title: I've finished! ✅ Continue to the next exercise, 2 more to go! 💪
+          payload: I've finished the exercise.
+        - title: I'll get some water 🥤
+          payload: I'll get some water
+
+  utter_recommendation_2_text_1:
+    - text: "You are working towards your goal! Shall we continue?"
+      image: https://i.ytimg.com/vi/eDp7EYqe2HU/maxresdefault.jpg
+
+  utter_recommendation_2_text_2:
+    - text: "The third exercise is for your back, which takes about 10 minutes. Enjoy! Check it [here](https://b23.tv/6iahneh)"
+      buttons:
+        - title: I've finished! ✅ Continue to the last exercise. 💪
+          payload: I've finished the exercise.
+        - title: I'll get some water.
+          payload: I'll get some water
+
+  utter_recommendation_3_text_1:
+    - text: "Good job! You have finished your major exercise today, now let's do some stretching 💪. It helps prevent muscle soreness :)"
+      image: https://i.ytimg.com/vi/k3mVP4fSlPA/maxresdefault.jpg
+
+  utter_recommendation_3_text_2:
+    - text: "You can check it [here](https://b23.tv/gmZfaJi)"
+      buttons:
+        - title: I've finished!
+          payload: I've finished the exercise ✅🎉
+
+  utter_all_done_encouragement:
+    - text: |-
+        Congratulations!🎉 You have finished all your exercise tasks today! 
+        You did a very good job during your quarantine😊 So far, you have gathered 🌟🌟🌟 (3 stars in one streak)! 11 more days to go!
+        You can also check your achievement board here! ⬇️
+      image: https://i.imgur.com/4xe6Orm.png
+
+  utter_poster:
+    - text: |-
+        Make a poster📜 and share it with your friends👬
+        Check here for your poster! ⬇️
+      image: https://i.imgur.com/ABPvyfn.jpeg
+
+  utter_congrat_1:
+    - text: "Congrats on your last day of quarantine! 🥳🎉 You have been sticking to your goal in the past 14 days, and this impresses me a lot 💪"
+
+  utter_congrat_2:
+    - text: "Hope I have given you more motivation and joy during your quarantine! Please stay healthy and safe😊"
+
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-  - text: "please watch video [click](https://www.youtube.com/embed/XMAw_bKTLbA)"
-
-
+    - text: Hey! How are you?
+  utter_break:
+    - text: Sure. Please notify me when you come back!
+      buttons:
+        - title: I'm back; Let's continue!
+          payload: I'm back. Let's continue!
   utter_did_that_help:
-  - text: "Did that help you?"
-
+    - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+    - text: Great, carry on!
+  utter_goodbye_exercise:
+    - text: You have finished your exercises today! Please take a good rest and see you!
   utter_goodbye:
-  - text: "Bye"
-
+    - text: Goodbye!👋
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  utter_ask_name:
+    - text: "To begin with, may I know your name?"
+
+  utter_ask_age:
+    - text: "What is your age?"
+
+  utter_ask_gender:
+    - text: "What is your gender?"
+      buttons:
+        - title: "Male"
+          payload: Male
+        - title: "Female"
+          payload: Female
+
+  utter_ask_weight:
+    - text: "What is your weight?"
+
+  utter_ask_height:
+    - text: "How about your height?"
+
+  utter_ask_how_often_exercise:
+    - text: "How often do you exercise?"
+      buttons:
+        - title: "Less than one hour per week"
+          payload: Less 1 hour per week
+        - title: "One to two hours per week"
+          payload: One to two hours per week
+        - title: "Two to three hours per week"
+          payload: Two to three hours per week
+        - title: "Three to four hours per week"
+          payload: Three to four hours per week
+        - title: "More than four hours per week"
+          payload: More than four hours per week
+
+  utter_ask_goal:
+    - text: "Then, what goal of exercise would you like to set for your coming 14 days?"
+      buttons:
+        - title: "Shedding fat"
+          payload: Shedding fat
+        - title: "Building muscles"
+          payload: Building muscles
+        - title: Improving endurance
+          payload: Improving endurance
+        - title: "Increasing flexibility"
+          payload: Increasing flexibility
+
+  utter_submit:
+    - text: |-
+        All done! Here is your personal data:
+            - 🌟 Name: {name}
+            - 🌟 Age: {age}
+            - 🌟 Gender: {gender}
+            - 🌟 Height: {height}
+            - 🌟 Weight: {weight}
+            - 🌟 Exercise Experience: {how_often_exercise}
+            - 🌟 14-days Goal: {goal}
+        I have customized a daily exercise plan for you! I will notify you for exercise everyday!
+forms:
+  user_info:
+    name:
+      - type: from_text
+        # entity: name
+    age:
+      - type: from_text
+        # entity: age
+    gender:
+      - type: from_text
+        entity: gender
+    weight:
+      - type: from_text
+        # entity: weight
+    height:
+      - type: from_text
+        # entity: height
+    how_often_exercise:
+      - type: from_text
+        entity: how_often_exercise
+    goal:
+      - type: from_text
+        entity: goal
+
+actions:
+  - utter_all_done_encouragement
+  - utter_goodbye_exercise
+  - utter_greet
+  - utter_poster
+  - utter_recommendation_1
+  - utter_recommendation_2
+  - utter_recommendation_3
+  - utter_recommendation_total
+  - utter_set_time
+  - utter_time_needed
