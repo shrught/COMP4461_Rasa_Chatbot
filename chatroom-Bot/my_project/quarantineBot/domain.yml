@@ -11,13 +11,14 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - give_name 
-  - give_age 
-  - give_gender 
-  - give_weight 
-  - give_height 
-  - give_how_often_exercise 
-  - give_goal 
+  - inform
+  # - give_name 
+  # - give_age 
+  # - give_gender 
+  # - give_weight 
+  # - give_height 
+  # - give_how_often_exercise 
+  # - give_goal 
 
 entities: 
   - name 
@@ -30,14 +31,14 @@ entities:
 
 slots:
   name:
-    type: any
+    type: text
     influence_conversation: false
   age:
     type: any
     influence_conversation: false
   gender:
-    type: any
-    influence_conversation: false
+    type: text
+    influence_conversation: false 
   weight:
     type: any
     influence_conversation: false
@@ -48,7 +49,7 @@ slots:
     type: any
     influence_conversation: false
   goal:
-    type: any
+    type: text
     influence_conversation: false
 
 responses:
@@ -79,22 +80,47 @@ responses:
 
   utter_ask_gender:
   - text: "What is your gender?"
+    buttons:
+    - title: "Male"
+      payload: '/inform{{"gender":"male"}}'
+    - title: "Female"
+      payload: '/inform{{"gender":"female"}}'
 
   utter_ask_weight:
-  - text: "What is your weight?"
+  - text: "What is your weight in kg?"
 
   utter_ask_height:
-  - text: "How about your height?"
+  - text: "How about your height in cm?"
 
   utter_ask_how_often_exercise:
   - text: "How often do you exercise?"
+    buttons:
+      - title: "Less than one hour per week"
+        payload: '/inform{{"how_often_exercise":"< 1 hour per week"}}'
+      - title: "One to two hours per week"
+        payload: '/inform{{"how_often_exercise":"1-2 hours per week"}}'
+      - title: "Two to three hours per week"
+        payload: '/inform{{"how_often_exercise":"2-3 hours per week"}}'
+      - title: "Three to four hours per week"
+        payload: '/inform{{"how_often_exercise":"3-4 hours per week"}}'
+      - title: "More than four hours per week"
+        payload: '/inform{{"how_often_exercise":"> 4 hours per week"}}'
 
   utter_ask_goal:
-  - text: "Then, what goal of exercise would you like to set for your coming 14 days? Do you specifically want to Bulk or Cut?"
+  - text: "Then, what goal of exercise would you like to set for your coming 14 days?"
+    buttons:
+    - title: "Shedding fat"
+      payload: '/inform{{"goal":"Shedding fat"}}'
+    - title: "Building muscles"
+      payload: '/inform{{"goal":"Building muscles"}}'
+    - title: "Improving endurance"
+      payload: '/inform{{"goal":"Improving endurance"}}'
+    - title: "Increasing flexibility"
+      payload: '/inform{{"goal":"Increasing flexibility"}}'
 
   utter_submit:
   - text: |-
-      All done! Here is your personal user_info:
+      All done! Here is your personal data:
           - Name: {name}
           - Age: {age}
           - Gender: {gender}
@@ -113,8 +139,8 @@ forms:
     - type: from_text 
       # entity: age 
     gender:
-    - type: from_text 
-      # entity: gender 
+    - type: from_entity
+      entity: gender 
     weight:
     - type: from_text 
       # entity: weight 
@@ -122,11 +148,11 @@ forms:
     - type: from_text 
       # entity: height 
     how_often_exercise:
-    - type: from_text 
-      # entity: how_often_exercise
+    - type: from_entity 
+      entity: how_often_exercise
     goal:
-    - type: from_text
-      # entity: goal 
+    - type: from_entity
+      entity: goal 
 
 
 session_config:
