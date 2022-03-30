@@ -1,11 +1,12 @@
 version: "2.0"
-
 nlu:
   - intent: greet
     examples: |
       - hey
       - hello
       - hi
+      - Hi
+      - Hello
       - hello there
       - good morning
       - good evening
@@ -16,7 +17,7 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
-
+      - Hi
   - intent: goodbye
     examples: |
       - good afternoon
@@ -30,24 +31,25 @@ nlu:
       - see you around
       - bye bye
       - see you later
-
   - intent: greet_exercise
     examples: |
       - I'm ready to exercise.
       - I want to do some exercise.
       - hi, maybe some exercise?
-
+      - Great, i would like to do some exercise
   - intent: set_time
     examples: |
       - right now
       - I would like to exercise now.
-
   - intent: time_input
     examples: |
-      - for about 30 min
+      - for about 30 mins
+      - 30 mins
+      - ok, then I will do 30 mins
+      - alright, 30 mins
+      - ok, then 30 mins
+      - 30min
       - 30 min
-      - ok, then I will do 30 min
-      - alright, 30 min
 
   - intent: next_exercise
     examples: |
@@ -56,19 +58,18 @@ nlu:
       - I have finished my exercise
       - exercise finished
       - finished
-
+      - Finished.
+      - Finished
   - intent: last_day
     examples: |
-      - The last day of quarantine!
-      - Quarantine ends tomorrow!
-      - I will be free tomorrow!
+      - The last day of quarantine
+      - Quarantine ends tomorrow
+      - I will be free tomorrow
       - This is my last night at quarantine.
       - last day of quarantine
-
   - intent: share_poster
     examples: |
       - yeah, show me the poster
-
   - intent: affirm
     examples: |
       - yes
@@ -77,7 +78,6 @@ nlu:
       - of course
       - that sounds good
       - correct
-
   - intent: deny
     examples: |
       - no
@@ -87,7 +87,6 @@ nlu:
       - don't like that
       - no way
       - not really
-
   - intent: mood_great
     examples: |
       - perfect
@@ -104,7 +103,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -121,7 +119,6 @@ nlu:
       - extremly sad
       - so saad
       - so sad
-
   - intent: bot_challenge
     examples: |
       - are you a bot?
