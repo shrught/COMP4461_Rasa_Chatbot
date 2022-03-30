@@ -1,3 +1,4 @@
 *.pyc
 chatroom-Bot/my_project/quarantineBot/models
 chatroom-Bot/my_project/db.sqlite3
+chatroom-Bot/my_project/quarantineBot/story_graph.dot
