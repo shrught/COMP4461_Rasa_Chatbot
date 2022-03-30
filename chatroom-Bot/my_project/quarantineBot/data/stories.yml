@@ -8,6 +8,8 @@ stories:
 
   - story: exercise_recommendation
     steps:
+      - intent: greet
+      - action: utter_greet
       - intent: greet_exercise
       - action: utter_set_time
       - intent: set_time
@@ -30,13 +32,13 @@ stories:
       - intent: last_day
       - action: utter_congrat
 
-  - story: chichat_1
-    steps:
-      - intent: greet_chichat
-      - action: utter_greet
-      - action: utter_chitchat_1
-      - intent: chichat_1_response
-      - action: utter_chichat_2
+  # - story: chichat_1
+  #   steps:
+  #     - intent: greet_chichat
+  #     - action: utter_greet
+  #     - action: utter_chitchat_1
+  #     - intent: chichat_1_response
+  #     - action: utter_chichat_2
 
   # - story: happy path
   #   steps:
@@ -64,3 +66,24 @@ stories:
   #     - action: utter_did_that_help
   #     - intent: deny
   #     - action: utter_goodbye
+
+  # - story: interactive_story_1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: greet_exercise
+  #     - action: utter_set_time
+  #     - intent: set_time
+  #     - action: utter_time_needed
+  #     - intent: time_input
+  #     - action: utter_recommendation_total
+  #     - intent: next_exercise
+  #     - action: utter_recommendation_1
+  #     - intent: next_exercise
+  #     - action: utter_recommendation_2
+  #     - intent: next_exercise
+  #     - action: utter_recommendation_3
+  #     - intent: next_exercise
+  #     - action: utter_all_done_encouragement
+  #     - action: utter_poster
+  #     - action: utter_goodbye_exercise
